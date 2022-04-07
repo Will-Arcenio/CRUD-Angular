@@ -10,7 +10,7 @@ import { CoursesService } from '../services/courses.service';
 })
 export class CoursesComponent implements OnInit {
 
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;
   //courses: Course[] = [];
   displayedColumns = ['name', 'category'];
 
@@ -22,7 +22,7 @@ export class CoursesComponent implements OnInit {
   {
     // this.courses = [];
     //this.coursesService = new CoursesService();
-    this.courses = this.coursesService.list();
+    this.courses$ = this.coursesService.list();
 
     // this.coursesService.list().subscribe(courses => this.courses = courses);
   }
